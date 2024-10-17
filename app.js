@@ -1,54 +1,117 @@
-let next = document.getElementById('next');
-let prev = document.getElementById('prev');
-let carousel = document.querySelector('.carousel');
-let items = document.querySelectorAll('.carousel .item');
-let countItem = items.length;
-let active = 1;
-let other_1 = null;
-let other_2 = null;
-next.onclick = () => {
-    carousel.classList.remove('prev');
-    carousel.classList.add('next');
-    active =active + 1 >= countItem ? 0 : active + 1;
-    other_1 =active - 1 < 0 ? countItem -1 : active - 1;
-    other_2 = active + 1 >= countItem ? 0 : active + 1;
-    changeSlider();
-}
-prev.onclick = () => {
-    carousel.classList.remove('next');
-    carousel.classList.add('prev');
-    active = active - 1 < 0 ? countItem - 1 : active - 1;
-    other_1 = active + 1 >= countItem ? 0 : active + 1;
-    other_2 = other_1 + 1 >= countItem ? 0 : other_1 + 1;
-    changeSlider();
-}
-const changeSlider = () => {
-    let itemOldActive = document.querySelector('.carousel .item.active');
-    if(itemOldActive) itemOldActive.classList.remove('active');
+gsap.registerPlugin(ScrollTrigger);
 
-    let itemOldOther_1 = document.querySelector('.carousel .item.other_1');
-    if(itemOldOther_1) itemOldOther_1.classList.remove('other_1');
+document.addEventListener('DOMContentLoaded', () => {
 
-    let itemOldOther_2 = document.querySelector('.carousel .item.other_2');
-    if(itemOldOther_2) itemOldOther_2.classList.remove('other_2');
+    const sections = gsap.utils.toArray('section');
 
-    items.forEach(e => {
-        e.querySelector('.image img').style.animation = 'none';
-        e.querySelector('.image figcaption').style.animation = 'none';
-        void e.offsetWidth;
-        e.querySelector('.image img').style.animation = '';
-        e.querySelector('.image figcaption').style.animation = '';
+    let scrollTween = gsap.to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '.wrapper',
+            pin: true,
+            scrub: 0.5,
+            snap: 1 / (sections.length - 1),
+            start: 'top top',
+            end: 3000,
+        }
     })
 
-    items[active].classList.add('active');
-    items[other_1].classList.add('other_1');
-    items[other_2].classList.add('other_2');
+    gsap.to('.logo', {
+        fontSize: '2.5rem',
+        top: '4rem',
+        scrollTrigger: {
+            trigger: '.logo',
+            start: 'top top',
+            end: 1500,
+            scrub: 0.5,
+        }
+    })
 
-    clearInterval(autoPlay);
-    autoPlay = setInterval(() => {
-        next.click();
-    }, 5000);
-}
-let autoPlay = setInterval(() => {
-    next.click();
-}, 5000);
+    gsap.to('.line', {
+        height: '10rem',
+        scrollTrigger: {
+            trigger: '.line',
+            scrub: 0.5,
+            start: 'center center',
+            end: 2000,
+        }
+    })
+
+    document.querySelectorAll('.character').forEach(el => {
+
+        gsap.to(el.querySelector('.caption'), {
+            x: 0,
+            y: 0,
+            scrollTrigger: {
+                containerAnimation: scrollTween,
+                trigger: el.querySelector('.caption'),
+                start: 'top bottom',
+                end: '+=1000',
+                scrub: 0.5,
+            }
+        })
+
+        gsap.to(el.querySelector('.quote'), {
+            y: 0,
+            ease: 'none',
+            scrollTrigger: {
+                containerAnimation: scrollTween,
+                trigger: el.querySelector('.quote'),
+                start: 'top bottom',
+                end: '+=20%',
+                scrub: 0.5,
+            }
+        })
+
+        gsap.to(el.querySelector('.nickname'), {
+            y: 0,
+            ease: 'none',
+            scrollTrigger: {
+                containerAnimation: scrollTween,
+                trigger: el.querySelector('.nickname'),
+                start: 'top bottom',
+                end: '+=10%',
+                scrub: 0.5,
+            }
+        })
+
+        gsap.to(el.querySelector('.block'), {
+            x: 0,
+            ease: 'none',
+            scrollTrigger: {
+                containerAnimation: scrollTween,
+                trigger: el.querySelector('.block'),
+                start: 'top bottom',
+                end: '+=' + window.innerWidth,
+                scrub: 0.5,
+            }
+        })
+
+        gsap.to(el.querySelector('img'), {
+            y: 0,
+            ease: 'none',
+            scrollTrigger: {
+                containerAnimation: scrollTween,
+                trigger: el.querySelector('img'),
+                start: 'top bottom',
+                end: '+=50%',
+                scrub: 0.5,
+            }
+        })
+
+        gsap.to(el.querySelector('.huge-text'), {
+            y: 0,
+            ease: 'none',
+            scrollTrigger: {
+                containerAnimation: scrollTween,
+                trigger: el.querySelector('.huge-text'),
+                start: 'top bottom',
+                end: '+=100%',
+                scrub: 0.5,
+            }
+        })
+
+    })
+
+})

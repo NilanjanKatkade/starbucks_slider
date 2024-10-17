@@ -2,112 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ScrollTrigger - Horizontal scroll</title>
+    <link href="/style.css" rel="stylesheet"/>
 </head>
 <body>
-    
-    <header>
-        <figure class="logo">
-            <img src="images/logo.png" alt="">
-        </figure>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="">Coffee</a></li>
-                <li><a href="">Menu</a></li>
-                <li><a href="">About</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="carousel next">
-            <div class="list">
-                <article class="item other_1">
-                    <div class="main-content" 
-                    style="background-color: #9c4d2f;">
-                        <div class="content">
-                            <h2>Caffe Latte, a new product</h2>
-                            <p class="price">$ 20</p>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore animi voluptatibus sequi illo, earum molestias explicabo officiis iste neque? Quis quod eligendi fugit, dolore nam itaque modi exercitationem voluptatem corrupti aut aspernatur. Quos non in sed ratione tenetur harum.
-                            </p>
-                            <button class="addToCard">
-                                Add To Card
-                            </button>
-                        </div>
-                    </div>
-                    <figure class="image">
-                        <img src="images/1.png" alt="">
-                        <figcaption>Caffe Latte, a new product</figcaption>
-                    </figure>
-                </article>
-                <article class="item active">
-                    <div class="main-content" 
-                    style="background-color: #f5bfaf;">
-                        <div class="content">
-                            <h2>Strawberry mocha, a new product</h2>
-                            <p class="price">$ 20</p>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore animi voluptatibus sequi illo, earum molestias explicabo officiis iste neque? Quis quod eligendi fugit, dolore nam itaque modi exercitationem voluptatem corrupti aut aspernatur. Quos non in sed ratione tenetur harum.
-                            </p>
-                            <button class="addToCard">
-                                Add To Card
-                            </button>
-                        </div>
-                    </div>
-                    <figure class="image">
-                        <img src="images/2.png" alt="">
-                        <figcaption>Strawberry mocha, a new product</figcaption>
-                    </figure>
-                </article>
-                <article class="item other_2">
-                    <div class="main-content" 
-                    style="background-color: #dedfe1;">
-                        <div class="content">
-                            <h2>Doppio espresso, a new product</h2>
-                            <p class="price">$ 20</p>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore animi voluptatibus sequi illo, earum molestias explicabo officiis iste neque? Quis quod eligendi fugit, dolore nam itaque modi exercitationem voluptatem corrupti aut aspernatur. Quos non in sed ratione tenetur harum.
-                            </p>
-                            <button class="addToCard">
-                                Add To Card
-                            </button>
-                        </div>
-                    </div>
-                    <figure class="image">
-                        <img src="images/3.png" alt="">
-                        <figcaption>Doppio espresso, a new product</figcaption>
-                    </figure>
-                </article>
-                <article class="item">
-                    <div class="main-content" 
-                    style="background-color: #7eb63d;">
-                        <div class="content">
-                            <h2>Matcha latte macchiato, a new product</h2>
-                            <p class="price">$ 20</p>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore animi voluptatibus sequi illo, earum molestias explicabo officiis iste neque? Quis quod eligendi fugit, dolore nam itaque modi exercitationem voluptatem corrupti aut aspernatur. Quos non in sed ratione tenetur harum.
-                            </p>
-                            <button class="addToCard">
-                                Add To Card
-                            </button>
-                        </div>
-                    </div>
-                    <figure class="image">
-                        <img src="images/4.png" alt="">
-                        <figcaption>Matcha latte macchiato, a new product</figcaption>
-                    </figure>
-                </article>
-            </div>
-            <div class="arrows">
-                <button id="prev"><</button>
-                <button id="next">></button>
-            </div>
+    <div class="logo">
+        <h1>zest<br>events<br/>page</h1>
+    </div>
+
+    <div class="wrapper">
+        <section class="intro">
+            <div class="line"></div>
         </section>
-    </main>
 
-    <script src="app.js"></script>
+        <section class="saitama character">
+            <div class="block"></div>
+            <img src="/img/badminton.png" alt=""><span class="huge-text">badminton</span>
+            <div class="caption">
+                This might be what you're searching for if your motivation stems from the idea that each smash will make you stronger and better.In its sporting spectacle, COEP Tech ZEST is hosting a 'Badminton - Smash the Shuttle' event.
+            </div>
+            <!-- <div class="quote">
+                I'll leave tomorrow's problems to tomorrow's me
+            </div> -->
+            <button class="quote">
+                Read More   
+            </button>
+        </section>
+
+        <section class="genos character">
+            <div class="block"></div>
+            <img src="/img/basketball.png" alt=""><span class="huge-text">bascketball</span>
+            <div class="caption">
+                Zest invites you to the court, where the fast-paced and high-flying action of basketball unfolds. Be captivated by the agility, strategy, and hoop dreams as teams shoot for success in this exhilarating sport.
+            </div>
+            <!-- <div class="quote">
+                I WILL NOT grow if i cannot face superior opponents
+            </div> -->
+            <button class="quote">
+                Read More   
+            </button>
+        </section>
+        <section class="new-character character">
+            <div class="block"></div>
+            <img src="/img/cricket.png" alt=""><span class="huge-text">cricket</span>
+            <div class="caption">
+                Experience the electrifying atmosphere as Zest brings together top-notch teams for an exhilarating cricket extravaganza, promising a display of strategic brilliance, jaw-dropping catches, and fierce competition that will leave spectators on the edge of their seats.
+            </div>
+            <button class="quote">
+                Read More
+            </button>
+        </section>
+        <section class="new-character character">
+            <div class="block"></div>
+            <img src="/img/fencing.png" alt=""><span class="huge-text">fencing</span>
+            <div class="caption">
+                Witness the clash of blades and the artistry of footwork at ZEST's fencing battleground. Our fencers engage in a duel of skill, strategy, and agility, creating a spectacle that transcends sport. Join us in celebrating the elegance and precision of fencing, where every move is a calculated step towards victory in this thrilling display of swordplay.
+            </div>
+            <button class="quote">
+                Read More
+            </button>
+        </section>
+
+        
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="/app.js"></script>
+
 </body>
 </html>
